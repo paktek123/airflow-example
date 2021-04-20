@@ -21,7 +21,7 @@ dag = DAG(
 
 start = DummyOperator(task_id='run_this_first', dag=dag)
 
-passing = KubernetesPodOperator(namespace='default',
+passing = KubernetesPodOperator(namespace='spark',
                           image="bde2020/spark-submit",
                           cmds=["sleep"],
                           arguments=["10000000"],
